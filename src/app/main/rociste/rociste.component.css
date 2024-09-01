@@ -1,0 +1,81 @@
+mat-toolbar {
+    background-color: #333;
+    color: #fff;
+}
+
+.title-center {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-field {
+    margin-bottom: 20px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-form-field .mat-form-field-infix {
+    background-color: #f2f2f2;
+    border-radius: 4px;
+}
+
+mat-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+mat-header-cell {
+    background-color: #d3d3d3;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+}
+
+mat-cell {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+mat-cell:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+mat-icon-button {
+    color: #333;
+}
+
+mat-icon-button:hover {
+    color: #000;
+}
+
+mat-paginator {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+mat-header-cell, mat-cell {
+    display: flex;
+    align-items: center;
+}
+
+mat-header-cell:last-child, mat-cell:last-child {
+    justify-content: flex-end;
+}
+
+mat-cell button {
+    margin-left: 5px;
+}

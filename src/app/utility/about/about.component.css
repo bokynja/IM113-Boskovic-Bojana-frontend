@@ -1,0 +1,83 @@
+body {
+  background-color: #f2f2f2;
+  color: #000;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-section {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.hero-section p {
+  margin: 10px 0 0;
+}
+
+main {
+  padding: 20px;
+}
+
+.about-section h2 {
+  color: #000;
+}
+
+.about-section p {
+  color: #333;
+}
+
+.mission-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.mission-section h2 {
+  color: #fff;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.mission-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mission-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mission-item img {
+  width: 100px;
+  height: auto;
+}
+
+.mission-item h3 {
+  color: #333;
+}
+
+.mission-item p {
+  color: #666;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

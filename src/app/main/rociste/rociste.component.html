@@ -1,0 +1,64 @@
+<mat-toolbar color="primary">
+  <span class="title-center">Ročište</span>
+</mat-toolbar>
+
+<div class="container mat-elevation-z8">
+  <div class="filter-field">
+    <mat-form-field subscriptSizing="dynamic">
+    <input matInput placeholder="Pretražite rocista" name="filterField" (keyup)="applyFilter($event)" >
+  </mat-form-field>
+</div>
+
+  <mat-table matSort [dataSource]="dataSource" class="mat-cell" >
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="datumrocista">
+      <mat-header-cell *matHeaderCellDef mat-sort-header="date">Datum Ročišta</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{ row.datumRocista | date: 'dd.MM.yyyy.' }}</mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="sudnica">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Sudnica</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.sudnica}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ucesnik">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Učesnik</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.ucesnik.ime}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="predmet">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Predmet</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.predmet.id}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>
+        <button mat-icon-button color="primary" (click)="openDialog(1)">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-icon-button color="primary" (click)="openDialog(2, row.id, row.datumrocista, row.sudnica, row.ucesnik, row.predmet)">
+          <mat-icon arial label="Edit">edit</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="openDialog(3, row.id, row.datumrocista, row.sudnica, row.ucesnik, row.predmet )">
+          <mat-icon arial label="Delete">delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns">
+      <mat-row style="cursor: default"
+       *matRowDef="let row; columns: displayedColumns"> </mat-row>
+    </mat-header-row>
+  </mat-table>
+
+    <mat-paginator [length]="20" [pageSize]="5" [pageSizeOptions]="[3,6,9,12]">
+    </mat-paginator>
+  </div>
+
